@@ -31,7 +31,7 @@ for (var i = 0; i < popup.length; i++) {
 } // ! ============ VIEW ============================
 
 
-var maxSize, minSize;
+var maxSize, minSize, w, h;
 window.addEventListener("resize", Resize, false);
 
 function Resize() {
@@ -43,6 +43,8 @@ function Resize() {
     minSize = window.innerHeight;
   }
 
+  w = maxSize;
+  h = maxSize;
   canvas.width = maxSize;
   canvas.height = maxSize;
 
@@ -67,7 +69,7 @@ Resize(); // * Bubbles ================================
 
 (function () {
   var config = {
-    dotsQuantity: 40,
+    dotsQuantity: 30,
     dotMinRad: 1,
     dotMaxRad: 20,
     sphereRad: 300,
@@ -82,7 +84,7 @@ Resize(); // * Bubbles ================================
   };
   var TWO_PI = 2 * Math.PI;
   var ctx = canvas.getContext("2d");
-  var w, h, mouse, dots;
+  var mouse, dots;
 
   var Dot = /*#__PURE__*/function () {
     function Dot(r) {
@@ -173,8 +175,8 @@ Resize(); // * Bubbles ================================
   }
 
   function init() {
-    w = canvas.width = maxSize;
-    h = canvas.height = maxSize;
+    w = canvas.width = maxSize * 1;
+    h = canvas.height = maxSize * 1;
     mouse = {
       x: w / 2,
       y: h / 2,
@@ -224,13 +226,13 @@ document.addEventListener('mousemove', function (e) {
   var rotationX = -(e.clientX - window.innerWidth / 2) / window.innerWidth * 30 - 7,
       rotationY = (e.clientY - window.innerHeight / 2) / window.innerHeight * 30 + 7;
   rotator.style.transform = 'rotateX(' + rotationY + 'deg) rotateY(' + rotationX + 'deg)';
-}, false);
-document.addEventListener('touchmove', function (e) {
-  var rotationX = -(e.changedTouches[0].pageX - window.innerWidth / 2) / window.innerWidth * 30 - 7,
-      rotationY = (e.changedTouches[0].pageY - window.innerHeight / 2) / window.innerHeight * 30 + 7;
-  rotator.style.transform = 'rotateX(' + rotationY + 'deg) rotateY(' + rotationX + 'deg)';
-  console.log(e.changedTouches[0].pageX);
-}, false); // central button mouse hover
+}, false); // document.addEventListener('touchmove', (e) => {
+// 	let rotationX = - (e.changedTouches[0].pageX - window.innerWidth / 2) / window.innerWidth * 30 - 7,
+// 		rotationY = (e.changedTouches[0].pageY - window.innerHeight / 2) / window.innerHeight * 30 + 7
+// 	rotator.style.transform = 'rotateX(' + rotationY + 'deg) rotateY(' + rotationX + 'deg)'
+// 	console.log(e.changedTouches[0].pageX)
+// }, false);
+// central button mouse hover
 
 centrlBtn.addEventListener('mouseover', function () {
   butNames.classList.add('menu__names--hover');
@@ -310,7 +312,7 @@ function LazyPopup(i) {
     if (j === lazy[i].length) {
       clearInterval(lazyInterval);
     }
-  }, 100);
+  }, 200);
 }
 
 function ClosePopUp() {
