@@ -38,7 +38,6 @@ body {
   width: 100%;
   font-size: 100%;
   line-height: 1;
-  font-size: 14px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -110,12 +109,19 @@ html {
   background-color: #c23616;
   background: -o-radial-gradient(center, circle, #c23616 0%, #000 100%);
   background: radial-gradient(circle at center, #c23616 0%, #000 100%);
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c23616+0,000000+100 */
+  /* Old browsers */
+  background: #c23616;
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -o-radial-gradient(center, ellipse, #c23616 0%, #000000 100%);
+  background: radial-gradient(ellipse at center, #c23616 0%, #000000 100%);
+  /* IE6-9 fallback on horizontal gradient */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c23616', endColorstr='#000000',GradientType=1 );
   color: #f5f6fa;
   font-family: sans-serif;
   cursor: none;
-  -webkit-transition: background 0.6s;
-  -o-transition: background 0.6s;
-  transition: background 0.6s;
 }
 
 .body--popup-opened {
