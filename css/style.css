@@ -45,6 +45,7 @@ body {
 }
 
 button {
+  -webkit-tap-highlight-color: transparent;
   padding: 0px;
   border: none;
   font: inherit;
@@ -92,6 +93,13 @@ h6 {
 * {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+}
+
+html {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .body {
