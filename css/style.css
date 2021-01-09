@@ -99,6 +99,7 @@ html {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background-color: #000000;
 }
 
 .body {
@@ -107,10 +108,16 @@ html {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: black;
-  background: -webkit-gradient(linear, left top, left bottom, from(#000), color-stop(40%, #c23616), color-stop(60%, #c23616), to(#000));
-  background: -o-linear-gradient(#000 0%, #c23616 40%, #c23616 60%, #000 100%);
-  background: linear-gradient(#000 0%, #c23616 40%, #c23616 60%, #000 100%);
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c23616+0,000000+100 */
+  /* Old browsers */
+  background: #000000;
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -o-radial-gradient(center, ellipse, #c23616 0%, #000000 100%);
+  background: radial-gradient(ellipse at center, #c23616 0%, #000000 100%);
+  /* IE6-9 fallback on horizontal gradient */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c23616', endColorstr='#000000',GradientType=1 );
   color: #f5f6fa;
   font-family: sans-serif;
   cursor: none;
@@ -251,6 +258,27 @@ html {
   -o-transition: transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.menu__focus_1 {
+  z-index: 1;
+  -webkit-transform: translate(0px);
+      -ms-transform: translate(0px);
+          transform: translate(0px);
+}
+
+.menu__focus_2 {
+  z-index: 3;
+  -webkit-transform: translate(10px);
+      -ms-transform: translate(10px);
+          transform: translate(10px);
+}
+
+.menu__focus_3 {
+  z-index: 2;
+  -webkit-transform: translate(5px);
+      -ms-transform: translate(5px);
+          transform: translate(5px);
 }
 
 .menu__circle {
