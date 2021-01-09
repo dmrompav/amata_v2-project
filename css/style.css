@@ -152,6 +152,10 @@ h6 {
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .central-btn {
@@ -161,7 +165,6 @@ h6 {
   height: 80px;
   -webkit-transform: translateZ(200px);
           transform: translateZ(200px);
-  border: 1px solid black;
   cursor: pointer;
 }
 
@@ -491,6 +494,30 @@ h6 {
   cursor: pointer;
 }
 
+.menu-li__button_1.mobile {
+  top: -200px;
+}
+
+.menu-li__button_2.mobile {
+  top: -150px;
+}
+
+.menu-li__button_3.mobile {
+  top: -100px;
+}
+
+.menu-li__button_4.mobile {
+  top: -100px;
+}
+
+.menu-li__button_5.mobile {
+  top: -150px;
+}
+
+.menu-li__button_6.mobile {
+  top: -200px;
+}
+
 .menu-li__text {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -660,6 +687,12 @@ h6 {
   transition: opacity 0.3s, transform 0.6s, -webkit-transform 0.6s;
 }
 
+.menu__li.mobile {
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
 .menu__li--opened:nth-child(1) {
   opacity: 1;
   -webkit-transform: rotate(0deg);
@@ -702,12 +735,60 @@ h6 {
           transform: rotate(300deg);
 }
 
+.menu__li--opened.mobile:nth-child(1) {
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.menu__li--opened.mobile:nth-child(2) {
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.menu__li--opened.mobile:nth-child(3) {
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.menu__li--opened.mobile:nth-child(4) {
+  opacity: 1;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.menu__li--opened.mobile:nth-child(5) {
+  opacity: 1;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.menu__li--opened.mobile:nth-child(6) {
+  opacity: 1;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .menu-li__button {
   -webkit-transition: -webkit-transform 0.6s;
   transition: -webkit-transform 0.6s;
   -o-transition: transform 0.6s;
   transition: transform 0.6s;
   transition: transform 0.6s, -webkit-transform 0.6s;
+}
+
+.menu-li__button.mobile {
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
 }
 
 .menu-li__button:hover > .menu-li__text_2 {
@@ -757,6 +838,42 @@ h6 {
           transform: rotate(-300deg);
 }
 
+.menu-li__button--opened.mobile.menu-li__button_1 {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.menu-li__button--opened.mobile.menu-li__button_2 {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.menu-li__button--opened.mobile.menu-li__button_3 {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.menu-li__button--opened.mobile.menu-li__button_4 {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.menu-li__button--opened.mobile.menu-li__button_5 {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.menu-li__button--opened.mobile.menu-li__button_6 {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
 .popup {
   font-size: 18px;
   color: #dcdde1;
@@ -788,9 +905,9 @@ h6 {
   position: relative;
   left: -200px;
   opacity: 0;
-  -webkit-transition: left 0.2s, opacity 0.2s;
-  -o-transition: left 0.2s, opacity 0.2s;
-  transition: left 0.2s, opacity 0.2s;
+  -webkit-transition: left 0.2s, opacity 0.5s ease-in;
+  -o-transition: left 0.2s, opacity 0.5s ease-in;
+  transition: left 0.2s, opacity 0.5s ease-in;
 }
 
 .popup__lazy--opened {
@@ -812,6 +929,11 @@ h6 {
 .popup__important {
   color: #f5f6fa;
   text-shadow: 0 0 10px #c23616, 0 0 20px #c23616;
+}
+
+.popup__img {
+  width: 50%;
+  height: auto;
 }
 
 .popup__a {

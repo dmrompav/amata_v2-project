@@ -32,7 +32,7 @@ for (var i = 0; i < popup.length; i++) {
 
 
 var maxSize, minSize;
-document.addEventListener("resize", Resize, false);
+window.addEventListener("resize", Resize, false);
 
 function Resize() {
   if (window.innerWidth < window.innerHeight) {
@@ -43,8 +43,24 @@ function Resize() {
     minSize = window.innerHeight;
   }
 
-  canvas.width = maxSize * 2;
-  canvas.height = maxSize * 2;
+  canvas.width = maxSize;
+  canvas.height = maxSize;
+
+  if (minSize < 650) {
+    li.forEach(function (e) {
+      e.classList.add('mobile');
+    });
+    liBut.forEach(function (e) {
+      e.classList.add('mobile');
+    });
+  } else {
+    li.forEach(function (e) {
+      e.classList.remove('mobile');
+    });
+    liBut.forEach(function (e) {
+      e.classList.remove('mobile');
+    });
+  }
 }
 
 Resize(); // * Bubbles ================================
@@ -157,8 +173,8 @@ Resize(); // * Bubbles ================================
   }
 
   function init() {
-    w = canvas.width = maxSize * 2;
-    h = canvas.height = maxSize * 2;
+    w = canvas.width = maxSize;
+    h = canvas.height = maxSize;
     mouse = {
       x: w / 2,
       y: h / 2,
@@ -208,6 +224,12 @@ document.addEventListener('mousemove', function (e) {
   var rotationX = -(e.clientX - window.innerWidth / 2) / window.innerWidth * 30 - 7,
       rotationY = (e.clientY - window.innerHeight / 2) / window.innerHeight * 30 + 7;
   rotator.style.transform = 'rotateX(' + rotationY + 'deg) rotateY(' + rotationX + 'deg)';
+}, false);
+document.addEventListener('touchmove', function (e) {
+  var rotationX = -(e.changedTouches[0].pageX - window.innerWidth / 2) / window.innerWidth * 30 - 7,
+      rotationY = (e.changedTouches[0].pageY - window.innerHeight / 2) / window.innerHeight * 30 + 7;
+  rotator.style.transform = 'rotateX(' + rotationY + 'deg) rotateY(' + rotationX + 'deg)';
+  console.log(e.changedTouches[0].pageX);
 }, false); // central button mouse hover
 
 centrlBtn.addEventListener('mouseover', function () {
